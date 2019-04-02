@@ -1,0 +1,73 @@
+package kitchenTimer;
+
+import javax.swing.JPanel;
+import java.util.Scanner;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
+
+public class Base extends JPanel{
+	
+
+	//@Override
+	public void paintObject(Graphics g) {
+			super.paintObject(g);
+			
+			drawTicks(g);
+			drawShell(g);
+			drawIndicator(g);
+		}
+	
+	private void drawTicks(Graphics g) {
+		Graphics g2d = (Graphics2D) g;
+		
+		RenderingHints rh
+			= new RenderingHints(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+
+		rh.put(RenderingHints.KEY_RENDERING,
+				RenderingHints.VALUE_RENDER_QUALITY);
+		
+		g2d.setRenderingHints(rh);
+		
+		Dimension size = getSize(); //Variables for the height and width of the window. Used to configure drawing to middle of screen.
+		double w = size.getWidth();
+		double h = size.getHeight();
+		
+		Ellipse2D e = new Ellipse2D.Double(0, 0, 80, 130); 
+		g2d.setStroke(new BasicStroke(1));
+		g2d.setColor(Color.black);
+		
+		}
+	
+	private void drawShell(Graphics g) {
+		Graphics g2d = (Graphics2D) g;
+		
+		RenderingHints rh 
+			= new RenderingHints(RenderingHints.KEY_ANTIALIASING,
+					RenderingHints.VALUE_ANTIALIAS_ON);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		String tick;
+		int timeLeft;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("What is your favorite color?");
+		
+		
+		System.out.println("Please enter in a number between 1-60.");
+		timeLeft = sc.nextInt();
+		
+
+	}
+
+}
